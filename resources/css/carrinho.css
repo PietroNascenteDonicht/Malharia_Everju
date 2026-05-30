@@ -77,8 +77,8 @@
 
 .delete{
     display: flex;
-    height: 22%;
-    padding: 2%;
+    height: 50px;
+
     svg path{
         stroke: #777;
     }

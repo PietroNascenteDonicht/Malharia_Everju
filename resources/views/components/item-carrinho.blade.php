@@ -1,9 +1,7 @@
 <div>
     <div class="cart-item carousel-slide">
 
-        <img 
-            class="cart-item-image"
-        >
+        <img src="/img/{{ $item->produto->imagem }}" class="cart-item-image">
 
         <div class="cart-item-info">
             <div class="cart-item-name">
