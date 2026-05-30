@@ -1,0 +1,93 @@
+.btns{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 5%;
+    margin: 5% 0;
+}
+
+.btn-primary-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    height: 45px;
+
+    background-color: var(--gold);
+    color: var(--font-color-light);
+    font-weight: 600;
+    font-size: var(--font-size);
+
+    border: none;
+    border-radius: 8px;
+
+    transition: .2s;
+
+    cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+    scale: 102%;
+    background-color: var(--gold-dark);
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #111;
+
+    text-decoration: none;
+}
+
+.btn-secondary:hover{
+    border-color: var(--accent);
+    background-color: var(--muted);
+    color: var(--accent);
+}
+
+.btn-secondary-custom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size);
+    cursor: pointer;
+}
+
+.btn-secondary-custom:hover{
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-tertiary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: var(--muted);
+    color: #111;
+
+    text-decoration: none;
+}
+
+.btn-tertiary:hover{
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}

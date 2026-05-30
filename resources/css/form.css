@@ -1,0 +1,29 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 2px var(--gold-dark);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent);
+}

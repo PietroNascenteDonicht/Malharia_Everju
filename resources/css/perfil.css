@@ -1,0 +1,52 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.profile-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    width: 300px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile-header h2 {
+    margin: 10px 0 5px;
+}
+
+.profile-header p {
+    color: #777;
+    font-size: 14px;
+}
+
+.profile-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.logout {
+    background: #e74c3c;
+}

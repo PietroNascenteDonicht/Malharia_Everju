@@ -1,0 +1,28 @@
+.everju-map-wrapper {
+    margin-top: 40px;
+    height: 1000px !important;
+
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #d4af37; /* dourado */
+}
+
+/* popup personalizado */
+.leaflet-popup-content-wrapper {
+    background: #f5f0e6; /* bege */
+    color: #333;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.leaflet-popup-tip {
+    background: #f5f0e6;
+}
+
+.leaflet-container img {
+    max-width: none !important;
+}

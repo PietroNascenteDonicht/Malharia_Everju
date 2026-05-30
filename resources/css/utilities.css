@@ -1,0 +1,243 @@
+/* =========================
+   LAYOUT UTILITIES
+========================= */
+
+.container-center {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 2px var(--gold-dark);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent);
+}
+
+
+/* =========================
+   ALERTS
+========================= */
+
+.alert-error {
+    background: #ffe5e5;
+    color: #b30000;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+    .cart {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item-quantity,
+    .cart-item-total {
+        grid-column: span 2;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .produto-page {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 160px;
+    }
+
+    .carousel-slide {
+        min-width: 240px;
+    }
+
+    .pedido-item {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .pedido-item-preco {
+        grid-column: span 2;
+        text-align: right;
+    }
+
+    .pedido-show-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+
+.main-picture{
+    background-image: url(/public/img/colecao-main-page.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 6% 10%;
+    align-content: center;
+    width: 100%;
+    height: 80dvh;
+    padding-left: 140px;
+
+
+
+    h1{
+        color: #fff;
+        font-size: 45px;
+    }
+
+    p{
+        color: var(--beige);
+
+    }
+
+    a{
+        width: 20% !important;
+    }
+}
+
+.categ-sec{
+    display: flex;
+    flex-direction: column;
+    background-color: #fafaf9;
+
+    min-height: 50dvh;
+    max-height:100dvh;
+}
+
+.categories{
+    display: grid;
+    justify-items: center;
+    height: 270px;
+    width: 100%;
+
+    overflow-x: auto;
+    box-sizing:content-box;
+
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    height: 250px;
+    width: 250px;
+}
+
+.category:hover{
+    border-color: var(--accent);
+    color: var(--accent);
+    scale: 102%;
+}
+
+.underline-accent{
+    padding-bottom: 15px;
+}
+
+.underline-accent::after{
+    content: '';
+    display: flex;
+    position: relative;
+    bottom: -10px;
+    left: 0;
+    transform: translateX(50%);
+    height: 2px;
+    width: 50%;
+    background-color: var(--accent);
+}
+
+.underline-accent.left::after{
+    transform: translateX(0);
+    width: 10%;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* =========================
+   CAROUSEL (SEM BOOTSTRAP)
+========================= */
+.carousel {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    column-gap: 2%;
+    scrollbar-width: none;
+    scrollbar-gutter: 0;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+}
+
+.carousel-slide {
+    min-width: 300px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+/* =========================
+   inputs
+========================= */
+
+select{
+    padding: 4%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    appearance: none;
+     background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7L10 12L15 7" stroke="%23333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%; /* Posição da seta: 15px da borda */
+}

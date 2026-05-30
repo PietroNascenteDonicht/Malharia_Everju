@@ -1,0 +1,19 @@
+.auth-card {
+    width: 90%;
+    max-width: 420px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+}
+
+.auth-title {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 15px;
+}
+
+.auth-subtitle {
+    font-weight: normal;
+    font-size: var(--font-size);
+    margin-bottom: 4dvh;
+}
