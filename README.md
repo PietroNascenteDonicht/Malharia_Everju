@@ -12,20 +12,16 @@ Everju é uma plataforma de comércio eletrônico que permite aos clientes naveg
 
 ### Página Inicial
 
-![Home](docs/images/home.png)
+![Home](/docs/pagina-inicial.png)
 
 ### Página do Produto
 
-![Produto](docs/images/produto.png)
+![Produto](docs/produto-view.png)
 
 ### Carrinho de Compras
 
-![Carrinho](docs/images/carrinho.png)
+![Carrinho](docs/carrinho-view.png)
 
 ### Painel Administrativo
 
-![Admin](docs/images/admin.png)
-
----
-
-## Funcionalidades
+![Admin](docs/admin.png)
