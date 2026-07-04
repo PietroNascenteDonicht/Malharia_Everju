@@ -1,3 +1,4 @@
+-- Active: 1761877257270@@127.0.0.1@3307
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,16 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produtos', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->text('descricao')->nullable();
-            $table->decimal('preco', 10, 2);
-            $table->string('imagem')->nullable();
-            $table->foreignId('categoria_id')->constrained()->cascadeOnDelete();
-            $table->integer('estoque')->default(0);
-            $table->boolean('ativo')->default(true);
-            $table->boolean('destaque')->default(false);
             $table->string('slug')->unique();
             $table->timestamps();
         });
@@ -31,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('categorias');
     }
 };
