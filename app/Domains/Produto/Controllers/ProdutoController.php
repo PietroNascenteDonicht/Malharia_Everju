@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Domains\Produto\Controllers;
-
-use Illuminate\Http\Request;
 use App\Domains\Produto\Models\Produto;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Http\Request;
+
 
 class ProdutoController extends Controller {
     public function index() {
@@ -12,15 +12,29 @@ class ProdutoController extends Controller {
         return view('produto.index', compact('produtos'));
     }
 
-    public function show($id) {
-        $produto = Produto::where('id', $id)->first();
+    public function show(int $id) {
+        $produto = Produto::with('variacoes.cor', 'variacoes.tamanho')
+        ->findOrFail($id);
 
-        return view('produto.show', compact('produto'));
+        $variacoes = $produto->variacoes->map(function ($v) {
+            return [
+                'id' => $v->id,
+                'cor_id' => $v->cor_id,
+                'tamanho_id' => $v->tamanho_id,
+                'imagem' => $v->imagem,
+                'estoque' => $v->estoque,
+                'cor' => $v->cor->nome,
+                'tamanho' => $v->tamanho->nome,
+            ];
+        });
+
+        return view('produto.show', compact('produto', 'variacoes'));
     }
 
-    public function categoria($categoria){
+    public function categoria(int $categoria){
         $categoria = (INT) $categoria;
-        $produtos = Produto::where('categoria_id', $categoria)->get();
+        $produtos = Produto::where('categoria_id', $categoria)
+        ->get();
 
         return view('produto.index', compact('produtos'));
     }

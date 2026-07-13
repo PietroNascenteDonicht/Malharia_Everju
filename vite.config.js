@@ -10,19 +10,20 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
-        server: {
-            host: true,
-            port: 5173,
-            strictPort: true,
+    
+    server: {
+        host: true,
+        port: 5173,
+        strictPort: true,
 
-            cors: true,
+        cors: true,
 
-            watch: {
-                ignored: ['**/storage/framework/views/**'],
-            },
-
-            hmr: {
-                host: '192.168.0.13',
-            },
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
         },
+
+        hmr: {
+            host: '192.168.0.10',
+        },
+    },
 });

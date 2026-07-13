@@ -1,0 +1,163 @@
+#fog{
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(4px);
+
+    z-index: 9999;
+}
+
+.modal-container{
+    width: min(500px, 90vw);
+
+    background: #ffffff;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+
+    animation: modalOpen .2s ease;
+}
+
+@keyframes modalOpen{
+    from{
+        opacity: 0;
+        transform: translateY(-20px) scale(.98);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 1.5rem;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-title{
+    margin: 0;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.sair{
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.sair::before{
+    content: "✕";
+    font-size: 1.2rem;
+}
+
+.sair:hover{
+    background: #f3f4f6;
+}
+
+.modal-main{
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-main form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-main input,
+.modal-main textarea,
+.modal-main select{
+    width: 100%;
+
+    padding: .8rem 1rem;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: .95rem;
+
+    transition: .2s;
+}
+
+.modal-main input:focus,
+.modal-main textarea:focus,
+.modal-main select:focus{
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: .75rem;
+
+    padding: 1rem 1.5rem;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.btn{
+    padding: .75rem 1.4rem;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: .95rem;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.btn:hover{
+    transform: translateY(-1px);
+}
+
+.btn:first-child{
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.btn:first-child:hover{
+    background: #e5e7eb;
+}
+
+.btn-primary{
+    background: #2563eb;
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background: #1d4ed8;
+}

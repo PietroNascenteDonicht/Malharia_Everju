@@ -1,6 +1,8 @@
 @import url("btns.css");
 @import url("header.css");
 @import url("rules.css");
+@import url("modal.css");
+@import url("toast.css");
 
 body{
     background-color: #fafaf9 !important;
@@ -18,10 +20,23 @@ body{
     width: 20%;
     height: 45px;
     border-radius: 8px;
+    border: none;
     align-items: center;
     justify-content: center;
     font-size: 16px;
     font-weight: 600;
+}
+
+button.svg{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 2%;
+    border-radius: 8px;
+}
+
+button.svg:hover{
+    background-color: var(--beige);
 }
 
 .grid-layout{

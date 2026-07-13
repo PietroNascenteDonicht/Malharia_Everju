@@ -9,9 +9,6 @@
         'resources/css/app.css', 
         'resources/css/auth.css',
         'resources/css/form.css',
-
-
-        'resources/js/app.js'
     ])
 </head>
 

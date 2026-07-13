@@ -15,6 +15,8 @@
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
         @vite(['resources/css/admin.css'])
+
+        @yield('scripts')
 </head>
 <body>
     @include('admin.header')
