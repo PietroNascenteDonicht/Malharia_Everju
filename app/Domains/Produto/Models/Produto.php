@@ -5,6 +5,7 @@ namespace App\Domains\Produto\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Domains\Produto\Models\Categoria;
+use App\Domains\Produto\Models\ProdutoVariacao;
 
 class Produto extends Model {
     protected $fillable = [
@@ -27,6 +28,10 @@ class Produto extends Model {
 
     public function categoria() {
         return $this->belongsTo(Categoria::class);
+    }
+
+    public function variacoes(){
+        return $this->hasMany(ProdutoVariacao::class);
     }
 
     public function scopeDestaques($query, $destaque) {
