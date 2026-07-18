@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Domains\Tamanho\models\Tamanho;
+use App\Domains\Produto\models\Tamanho;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

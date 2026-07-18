@@ -12,6 +12,7 @@ use App\Domains\Produto\Controllers\ProdutoController;
 use App\Domains\Produto\Models\Produto;
 
 use App\Domains\Produto\Models\Categoria;
+use App\Domains\Produto\Models\ProdutoVariacao;
 use App\Domains\Produto\Requests\StoreCategoriaRequest;
 
 use Illuminate\Support\Str;
@@ -45,7 +46,19 @@ class AdminController extends Controller {
 
     public function produtos(){
         $produtos = Produto::withCategoria()->get();
+        foreach($produtos as $produto){
+            $produto->estoque = ProdutoVariacao::where('produto_id', $produto->id)->count('estoque');
+        }
+
         return view('admin.produtos', compact('produtos'));
+    }
+
+    public function produtoDetalhes(INT $id) {
+        $produtoVariacoes = Produto::findOrFail($id)
+        ->variacoes()
+        ->with(['produto', 'cor', 'tamanho'])
+        ->get();
+        return view('admin.produto-detalhes', compact('produtoVariacoes'));
     }
     
     public function categorias(){

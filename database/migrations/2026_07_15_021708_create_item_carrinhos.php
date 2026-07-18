@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('item_carrinhos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('carrinho_id')->constrained('carrinhos')->cascadeOnDelete();
-            $table->foreignId('produto_id')->constrained('produtos')->cascadeOnDelete();
+            $table->foreignId('produto_variacao_id')->constrained('produto_variacoes')->cascadeOnDelete();
             $table->unsignedInteger('quantidade');
             $table->decimal('preco', 10, 2);
             $table->timestamps();

@@ -4,6 +4,7 @@ namespace App\Domains\Produto\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Domains\Produto\Models\Colecao;
 use App\Domains\Produto\Models\Categoria;
 use App\Domains\Produto\Models\ProdutoVariacao;
 
@@ -18,7 +19,6 @@ class Produto extends Model {
             'produtos.nome',
             'produtos.descricao',
             'produtos.preco',
-            'produtos.estoque',
             'produtos.imagem',
             'categorias.nome as categoria',
             'produtos.created_at',
@@ -28,6 +28,15 @@ class Produto extends Model {
 
     public function categoria() {
         return $this->belongsTo(Categoria::class);
+    }
+
+    public function colecoes() {
+        return $this->belongsToMany(
+            Colecao::class,
+            'item_colecoes',
+            'produto_id',
+            'colecao_id'
+        );
     }
 
     public function variacoes(){

@@ -1,11 +1,11 @@
 <div>
     <div class="cart-item carousel-slide">
 
-        <img src="/img/{{ $item->produto->imagem }}" class="cart-item-image">
+        <img src="/img/{{ $item->produtoVariacao->imagem }}" class="cart-item-image">
 
         <div class="cart-item-info">
             <div class="cart-item-name">
-                {{ $item->produto->nome }}
+                {{ $item->produtoVariacao->nome }}
             </div>
 
             <div class="cart-item-price">

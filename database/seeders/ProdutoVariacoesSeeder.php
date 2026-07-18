@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Domains\Cor\Models\Cor;
+use App\Domains\Produto\Models\Cor;
 use App\Domains\Produto\Models\Produto;
-use App\Domains\Tamanho\models\Tamanho;
-use App\Domains\ProdutoVariacao\Models\ProdutoVariacao;
+use App\Domains\Produto\Models\Tamanho;
+use App\Domains\Produto\Models\ProdutoVariacao;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;

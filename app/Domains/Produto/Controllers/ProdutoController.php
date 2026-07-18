@@ -1,5 +1,8 @@
 <?php
 namespace App\Domains\Produto\Controllers;
+
+use App\Domains\Produto\Models\Colecao;
+use App\Domains\Produto\Models\itemColecao;
 use App\Domains\Produto\Models\Produto;
 use App\Http\Controllers\Controller;
 
@@ -9,7 +12,8 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller {
     public function index() {
         $produtos = Produto::all();
-        return view('produto.index', compact('produtos'));
+        $colecao = Colecao::where('ativo', true)->get();
+        return view('produto.index', compact('produtos', 'colecao'));
     }
 
     public function show(int $id) {
@@ -31,10 +35,17 @@ class ProdutoController extends Controller {
         return view('produto.show', compact('produto', 'variacoes'));
     }
 
-    public function categoria(int $categoria){
+    public function categoria(int $categoria) {
         $categoria = (INT) $categoria;
         $produtos = Produto::where('categoria_id', $categoria)
         ->get();
+
+        return view('produto.index', compact('produtos'));
+    }
+
+    public function colecao(int $colecao) {
+        $colecao = (INT) $colecao;
+        $produtos = Colecao::findOrFail($colecao)->produtos;
 
         return view('produto.index', compact('produtos'));
     }

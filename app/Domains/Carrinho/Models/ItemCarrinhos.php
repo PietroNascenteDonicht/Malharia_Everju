@@ -5,6 +5,7 @@ namespace App\Domains\Carrinho\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Domains\Produto\Models\Produto;
+use App\Domains\Produto\Models\ProdutoVariacao;
 
 class ItemCarrinhos extends Model {
     public $item;
@@ -19,13 +20,13 @@ class ItemCarrinhos extends Model {
 
     protected $fillable = [
         'carrinho_id',
-        'produto_id',
+        'produto_variacao_id',
         'quantidade',
         'preco',
     ];
 
-    public function produto() {
-        return $this->belongsTo(Produto::class, 'produto_id');
+    public function produtoVariacao() {
+        return $this->belongsTo(ProdutoVariacao::class, 'produto_variacao_id');
     }
 
     public function getSubtotalAttribute() {

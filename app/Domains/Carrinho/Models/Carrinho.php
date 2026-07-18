@@ -18,7 +18,7 @@ class Carrinho extends Model {
 
     public function getTotalAttribute() {
         return $this->itens->sum(function($item) {
-            return $item->quantidade * $item->produto->preco;
+            return $item->quantidade * $item->preco;
         });
     }
 }
