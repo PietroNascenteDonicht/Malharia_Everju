@@ -16,6 +16,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/produtos', [ProdutoController::class, 'index'])->name('produto.index'); //produtos all
 Route::get('/produto/{id}', [ProdutoController::class, 'show'])->name('produto.show');
 Route::get('/produtos/{categoria}', [ProdutoController::class, 'categoria'])->name('produto.categoria'); //produtos por categoria
+Route::get('/produtos/colecao/{colecao}', [ProdutoController::class, 'colecao'])->name('produto.colecao'); // produtos de uma categoria
 
 # LOGS
 Route::get('/login', [UserController::class, 'loginForm'])->name('login');

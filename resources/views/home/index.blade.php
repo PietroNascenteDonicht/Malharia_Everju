@@ -3,16 +3,19 @@
 @section('content')
 
 <div class="main-picture">
-    <h1>Everju Essenciais</h1>
-    <p>Conforto Urbano encontra estilo minimalista</p>
+    @if(isset($colecao))
+    <h1>{{ $colecao->nome}}</h1>
+    <p>{{ $colecao->descricao }}</p>
     
-    <a href="" class="btn-primary-custom">Ver Coleção</a>
+    <a href="{{ route('produto.colecao', $colecao->id) }}" class="btn-primary-custom">Ver Coleção</a>
+    @else
+
+    @endif
 </div>
 
 <div class="container">
     <div class="space">
-    {{-- 🔥 DESTAQUES --}}
-    <h2 class="underline-accent left">Malharia em Destaque</h2>
+    <h2 class="underline-accent left">Malhas em Destaque</h2>
 
     <div class="carousel">
 
@@ -34,20 +37,6 @@
             @endforeach
         </div>
     </div>
-
-    <!-- {{-- 🛒 LISTAGEM --}}
-    <h2 class="mb-4">Produtos</h2>
-
-    <div class="row g-3">
-
-        @foreach($produtos as $produto)
-            <div class="products-grid">
-                <x-card :produto="$produto" />
-            </div>
-        @endforeach
-
-    </div> -->
-
 </div>
 
 @endsection
