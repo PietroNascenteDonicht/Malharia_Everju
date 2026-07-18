@@ -23,8 +23,8 @@ class UserController extends Controller {
         $request->validate([
             'nome' => 'required|string|max:100',
             'email' => 'required|string|unique:usuarios,email',
-            'password' => 'required|min:6',
-            'password_confirmation' => 'required|confirmed'
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required'
         ],
         [
             'nome.required' => 'Nome não informado',
@@ -35,9 +35,9 @@ class UserController extends Controller {
 
             'password.required' => 'Senha não informada',
             'password.min' => 'Senha deve ter mais de 6 caracteres', 
+            'password.confirmed' => 'Senhas não são iguais',
 
             'password_confirmation.required' => 'Senha não confirmada',
-            'password_confirmation.confirmed' => 'Senhas não são iguais',
         ],
         );
 
