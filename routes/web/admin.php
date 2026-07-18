@@ -13,6 +13,7 @@ Route::get('/admin/produtos/detalhes/{id}', [AdminController::class, 'produtoDet
 
 Route::get('/admin/categorias', [AdminController::class, 'categorias'])->name('admin.categorias');
 Route::post('/admin/categorias', [AdminController::class, 'store'])->name('admin.categorias.store');
+Route::put('/admin/categorias/{slug}', [AdminController::class, 'update'])->name('admin.categoria.update');
 Route::delete('admin/categorias', [AdminController::class, 'destroy'])->name('admin.categorias.destroy');
 
 Route::get('/admin/frete', [AdminController::class, 'frete'])->name('admin.frete');

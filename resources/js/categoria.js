@@ -79,6 +79,64 @@ document.querySelectorAll('#excluir').forEach(btn => {
     });
 });
 
+document.querySelectorAll('#alterar').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const parent = btn.parentElement.parentElement.querySelectorAll('td');
+        const nome = parent[0].textContent;
+        const slug = parent[1].textContent;
+
+        const csrf = document
+        .querySelector('meta[name="csrf-token"]')
+        .content;
+
+        formModal({
+            title:'Alterar Categoria', 
+            attributes: {
+                action: `/admin/categorias/${slug}`,
+            },
+            formId:'formCategoria',
+            form: [
+                createInput({
+                    type: 'text',
+                    id: 'nome',
+                    name: 'nome',
+                    placeholder: 'Digite o nome da categoria',
+                    value: nome,
+                    required: true,
+                }),
+
+                createInput({
+                    type: 'hidden',
+                    name: '_token',
+                    value: csrf,
+                }),
+            ]
+        })
+
+        const form = document.getElementById('formCategoria');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            formData.append('_method', 'PUT');
+
+            const resposta = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                body: formData,
+            });
+
+            const resultado = await resposta.json();
+            removeModal();
+
+            callToast({type: resultado.status, mensagem: resultado.mensagem})
+        });
+    });
+});
+
 async function deletarCategoria(slug) {
     try{
         const resposta = await fetch('/admin/categorias', {

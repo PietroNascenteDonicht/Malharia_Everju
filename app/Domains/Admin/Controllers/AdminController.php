@@ -14,7 +14,7 @@ use App\Domains\Produto\Models\Produto;
 use App\Domains\Produto\Models\Categoria;
 use App\Domains\Produto\Models\ProdutoVariacao;
 use App\Domains\Produto\Requests\StoreCategoriaRequest;
-
+use App\Domains\Produto\Requests\UpdateCategoriaRequest;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Illuminate\Session\Store;
@@ -76,6 +76,20 @@ class AdminController extends Controller {
         return response()->json([
             'status' => 'success',
             'mensagem' => 'Categoria criada com sucesso',
+        ]);
+    }
+
+    public function update(UpdateCategoriaRequest $request, string $slug) {
+        $categoria = Categoria::where('slug', $slug)->firstOrFail();
+
+        $categoria->update([
+            'nome' => $request->nome,
+            'slug' => Str::slug($request->nome),
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'mensagem' => 'Categoria alterada com sucesso',
         ]);
     }
 
